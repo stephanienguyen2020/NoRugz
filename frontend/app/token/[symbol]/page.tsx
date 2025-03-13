@@ -18,11 +18,6 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { ethers } from "ethers";
-// import {
-//   getTokens,
-//   buyToken,
-//   getPriceForTokens,
-// } from "@/services/memecoin-launchpad";
 import { useToast } from "@/components/ui/use-toast";
 import {
   TrendingUp,
@@ -699,7 +694,7 @@ export default function TokenDetailPage() {
                         value={buyAmount}
                         onChange={(e) => setBuyAmount(e.target.value)}
                         min="1"
-                        className={`bg-black/30 border-white/10 h-12 rounded-lg text-lg ${
+                        className={`bg-black/30 border-white/10 h-12 rounded-lg text-lg text-white ${
                           isAmountExceedingLimit ? "border-red-500" : ""
                         }`}
                       />
@@ -715,7 +710,7 @@ export default function TokenDetailPage() {
                         Total Cost
                       </label>
                       <div
-                        className={`bg-black/30 border border-white/10 h-12 rounded-lg flex items-center px-4 text-lg font-mono ${
+                        className={`bg-black/30 border border-white/10 h-12 text-white rounded-lg flex items-center px-4 text-2xl font-mono ${
                           isAmountExceedingLimit ? "border-red-500" : ""
                         }`}
                       >
@@ -804,7 +799,7 @@ export default function TokenDetailPage() {
                         Contract Address
                       </span>
                       <div className="flex items-center gap-2">
-                        <span className="font-mono text-sm text-white">
+                        <span className="font-mono text-2xl text-white">
                           {formatAddress(token?.id)}
                         </span>
                         <Button
@@ -854,7 +849,7 @@ export default function TokenDetailPage() {
                         className={`${
                           isTokenClosed
                             ? "bg-red-500/10 text-red-500 border-red-500/20"
-                            : "bg-green-500/10 text-green-500 border-green-500/20"
+                            : "bg-green-500/10 text-white border-green-500/20"
                         }`}
                       >
                         {isTokenClosed ? "Closed" : "Active"}
@@ -920,49 +915,9 @@ export default function TokenDetailPage() {
                         <span className="text-sm text-muted-foreground">
                           Trading Volume (24h)
                         </span>
-                        <span className="text-sm font-medium">
+                        <span className="text-sm font-medium text-white">
                           {token?.volume24h}
                         </span>
-                      </div>
-                      <div className="w-full bg-white/5 h-1.5 rounded-full overflow-hidden">
-                        <div
-                          className="bg-gradient-to-r from-green-400 to-[#00ff00] h-full rounded-full"
-                          style={{ width: "35%" }}
-                        ></div>
-                      </div>
-                    </div>
-
-                    <div className="bg-black/20 p-4 rounded-lg">
-                      <div className="flex justify-between mb-2">
-                        <span className="text-sm text-muted-foreground">
-                          Liquidity
-                        </span>
-                        <span className="text-sm font-medium">$45,678.90</span>
-                      </div>
-                      <div className="w-full bg-white/5 h-1.5 rounded-full overflow-hidden">
-                        <div
-                          className="bg-gradient-to-r from-green-400 to-[#00ff00] h-full rounded-full"
-                          style={{ width: "62%" }}
-                        ></div>
-                      </div>
-                    </div>
-
-                    <div className="bg-black/20 p-4 rounded-lg">
-                      <div className="flex justify-between mb-2">
-                        <span className="text-sm text-muted-foreground">
-                          Buy/Sell Ratio
-                        </span>
-                        <span className="text-sm font-medium">68% / 32%</span>
-                      </div>
-                      <div className="flex h-1.5 rounded-full overflow-hidden">
-                        <div
-                          className="bg-green-500 h-full"
-                          style={{ width: "68%" }}
-                        ></div>
-                        <div
-                          className="bg-red-500 h-full"
-                          style={{ width: "32%" }}
-                        ></div>
                       </div>
                     </div>
                   </div>
