@@ -824,7 +824,7 @@ export default function TokenDetailPage() {
                       </span>
                       <Badge
                         variant="outline"
-                        className="bg-purple-500/20 text-purple-300 border-purple-500/30 font-medium px-3"
+                        className=" text-white border-green-400 font-medium px-3"
                       >
                         {token?.chain}
                       </Badge>
@@ -841,7 +841,7 @@ export default function TokenDetailPage() {
                       <span className="text-muted-foreground font-medium">
                         Creator
                       </span>
-                      <span className="font-mono text-base text-white">
+                      <span className="font-mono text-2xl text-white">
                         {formatAddress(token?.creator)}
                       </span>
                     </div>
